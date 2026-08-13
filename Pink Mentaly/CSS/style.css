@@ -1,8 +1,7 @@
 body {
     font-family: cursive;
    margin: 20px;
-   
-   
+   background: linear-gradient(135deg, #ffffff, #ffd6ec, #f7a8d1);
 }
 .titulo {
     color: rgb(239, 13, 141);
@@ -24,4 +23,43 @@ body {
     max-width: 100%;
     height: auto;
    
+
+}
+.bloques {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 50px auto;
+    max-width: 900px;
+}
+
+.bloque {
+    background: white;
+    padding: 25px;
+    width: 40%;
+    border-radius: 20px;
+    text-align: center;
+
+    box-shadow: 0 5px 15px rgba(200, 80, 150, 0.2);
+}
+
+.bloque h2 {
+    color: rgb(239, 13, 141);
+}
+
+.bloque p {
+    line-height: 1.6;
+}
+.intro{
+     background: white;
+    padding: 25px;
+    width: 40%;
+    border-radius: 20px;
+    text-align: center;
+
+
+    box-shadow: 0 5px 15px rgba(200, 80, 150, 0.2);
+margin: 30px auto;
+    }
+
 }
