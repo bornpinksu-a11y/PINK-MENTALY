@@ -1,4 +1,27 @@
-.titulo{
-    color: crimson;
+body {
     font-family: cursive;
+   margin: 20px;
+   
+   
+}
+.titulo {
+    color: rgb(239, 13, 141);
+    font-size: xx-large;
+    text-align: center;
+    margin-bottom: 1rem;
+    
+}
+.Slogan {
+    font-family: cursive;
+    font-size: medium;
+    color: rgb(245, 147, 206);
+    text-align: center;
+
+}
+.img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+   
 }
