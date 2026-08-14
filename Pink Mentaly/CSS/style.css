@@ -19,9 +19,10 @@ body {
 }
 .img {
     display: block;
-    margin: 0 auto;
+    margin: 30px auto;
     max-width: 100%;
     height: auto;
+    border-radius: 30px;
    
 
 }
@@ -53,13 +54,15 @@ body {
 .intro{
      background: white;
     padding: 25px;
-    width: 40%;
-    border-radius: 20px;
+    width: 70%;
+    border-radius: 25px;
     text-align: center;
+    box-shadow: 0 5px 15px rgba(200, 80, 150, 0.2);
 
 
     box-shadow: 0 5px 15px rgba(200, 80, 150, 0.2);
 margin: 30px auto;
-    }
-
 }
+
+
+
