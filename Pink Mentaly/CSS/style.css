@@ -63,6 +63,25 @@ body {
     box-shadow: 0 5px 15px rgba(200, 80, 150, 0.2);
 margin: 30px auto;
 }
+.menu{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 30px auto;
+    flex-wrap: wrap;
 
+}
+.menu a {
+    text-decoration: none;
+    background: rgb(239, 13, 141);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: o.3s;
+}
+.menu a:hover{
+    background: rgb(239, 13, 141);
+    transform: scale(1.08);
 
-
+}
