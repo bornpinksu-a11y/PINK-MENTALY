@@ -126,3 +126,15 @@ margin: 30px auto;
     
 
 }
+.boton{
+    text-decoration: none;
+    background: white;
+    color: rgb(239, 13, 141);
+    padding: 8px 10px;
+    font-weight: bold;
+    border: 2px solid rgb(239, 13, 141);
+}
+.boton a:hover{
+    background-color: rgb(239, 13, 141);
+    transform: scale(1.08);
+} 
