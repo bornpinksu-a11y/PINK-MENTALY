@@ -1,5 +1,5 @@
 body {
-    font-family: cursive;
+    
    margin: 20px;
    background: linear-gradient(135deg, #ffffff, #ffd6ec, #f7a8d1);
 }
@@ -8,10 +8,11 @@ body {
     font-size: xx-large;
     text-align: center;
     margin-bottom: 1rem;
+    font-size: 55px;
     
 }
 .Slogan {
-    font-family: cursive;
+    
     font-size: medium;
     color: rgb(245, 147, 206);
     text-align: center;
@@ -22,7 +23,7 @@ body {
     margin: 30px auto;
     max-width: 100%;
     height: auto;
-    border-radius: 30px;
+    border-radius: 45px;
    
 
 }
@@ -35,11 +36,11 @@ body {
 }
 
 .bloque {
-    background: white;
+   background: white;
     padding: 25px;
     width: 40%;
     border-radius: 20px;
-    text-align: center;
+    text-align: center; 
 
     box-shadow: 0 5px 15px rgba(200, 80, 150, 0.2);
 }
@@ -83,5 +84,45 @@ margin: 30px auto;
 .menu a:hover{
     background: rgb(239, 13, 141);
     transform: scale(1.08);
+
+}
+.cuadro{
+    background: white;
+    padding: 25px;
+    width: 40%;
+    border-radius: 20px;
+    text-align: center; 
+    font-size: 20px;
+    line-height: 35px;
+    
+    box-shadow: 0 5px 15px rgba(200, 80, 150, 0.2);
+    
+}
+.titulos{
+     color: rgb(239, 13, 141);
+    font-size: xx-large;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 70px;
+    text-shadow: 3px 3px 8px #f7a8d1;
+    margin-bottom: 50px;
+
+}
+.img2 {
+    display: block;
+    margin: 30px auto;
+    max-width: 50%;
+    height: auto;
+    border-radius: 95px
+   
+}
+.contenido{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin: 40px auto;
+    max-width: 1000px;
+    
 
 }
