@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Avatar — Pink Mentaly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+<div class="campo-estrellas"></div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <a class="marca" href="./index.html">Pink<span>Mentaly</span></a>
+    <a class="sidebar-destacado" href="./avatar.html" aria-current="page">✦ Mi Avatar</a>
+    <nav class="sidebar-nav">
+      <span class="sidebar-grupo">Vestuario</span>
+      <a class="sidebar-link" href="./camisas.html">Camisas</a>
+      <a class="sidebar-link" href="./faldas.html">Faldas</a>
+      <a class="sidebar-link" href="./vestidos-tienda.html">Vestidos</a>
+      <a class="sidebar-link" href="./zapatos.html">Zapatos</a>
+      <a class="sidebar-link" href="./aretes.html">Aretes</a>
+      <a class="sidebar-link" href="./accesorios.html">Accesorios</a>
+      <span class="sidebar-grupo">Diseña</span>
+      <a class="sidebar-link" href="./ropa.html">Crea tu prenda</a>
+      <span class="sidebar-grupo">Conócenos</span>
+      <a class="sidebar-link" href="./historia.html">Historia</a>
+      <a class="sidebar-link" href="./mision.html">Misión</a>
+      <a class="sidebar-link" href="./vision.html">Visión</a>
+      <a class="sidebar-link" href="./tecnologia.html">Tecnología</a>
+      <a class="sidebar-link" href="./creadores.html">Creadoras</a>
+      <a class="sidebar-link" href="./contacto.html">Contacto</a>
+      <a class="sidebar-link" href="./index.html">Inicio</a>
+    </nav>
+    <p class="sidebar-pie">Pink Mentaly<br>Vive la moda desde otra dimensión</p>
+  </aside>
+  <main class="main-contenido">
+<span class="antetitulo" style="margin-top:40px; display:block;">Pruébate la boutique</span>
+<h1 class="titulos">Mi Avatar</h1>
+<div class="linea-central"></div>
+<p class="seccion-sub" style="margin-top:-30px;">
+  Este es tu doble digital. Ajusta su talla, su estilo y su ropa hasta que se sienta 100% tuyo.
+</p>
+
+<div class="avatar-app">
+
+  <!-- ===================== LIENZO DEL AVATAR ===================== -->
+  <div class="avatar-lienzo">
+    <div class="avatar-marco">
+      <svg id="avatarSVG" viewBox="0 0 240 320" xmlns="http://www.w3.org/2000/svg">
+
+        <defs>
+          <pattern id="patron-rayas" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(15)">
+            <rect width="14" height="14" fill="transparent"/>
+            <rect width="7" height="14" fill="currentColor" opacity="0.55"/>
+          </pattern>
+          <pattern id="patron-lunares" width="18" height="18" patternUnits="userSpaceOnUse">
+            <rect width="18" height="18" fill="transparent"/>
+            <circle cx="5" cy="5" r="2.6" fill="currentColor" opacity="0.6"/>
+            <circle cx="14" cy="13" r="2.6" fill="currentColor" opacity="0.6"/>
+          </pattern>
+          <pattern id="patron-corazones" width="20" height="18" patternUnits="userSpaceOnUse">
+            <rect width="20" height="18" fill="transparent"/>
+            <path d="M5 4 C3 1 -1 3 0.5 6 C2 9 5 11 5 11 C5 11 8 9 9.5 6 C11 3 7 1 5 4Z" fill="currentColor" opacity="0.6" transform="translate(4,2)"/>
+          </pattern>
+          <pattern id="patron-estrellas" width="22" height="22" patternUnits="userSpaceOnUse">
+            <rect width="22" height="22" fill="transparent"/>
+            <path d="M11 3 L13 9 L19 9 L14 13 L16 19 L11 15 L6 19 L8 13 L3 9 L9 9 Z" fill="currentColor" opacity="0.6"/>
+          </pattern>
+        </defs>
+
+        <!-- sombra del piso -->
+        <ellipse cx="120" cy="308" rx="60" ry="8" fill="#000" opacity="0.35"/>
+
+        <g id="figura">
+
+          <!-- ===== atuendo: VESTIDO ===== -->
+          <g id="atuendo-vestido" class="grupo-atuendo">
+            <path class="atuendo" d="M84 150 L156 150 L178 296 L62 296 Z" fill="#ff3fa0"/>
+            <path d="M84 150 L156 150 L163 180 L77 180 Z" fill="#000" opacity="0.1"/>
+          </g>
+
+          <!-- ===== atuendo: CONJUNTO ===== -->
+          <g id="atuendo-conjunto" class="grupo-atuendo" style="display:none">
+            <rect class="atuendo" x="86" y="150" width="68" height="55" rx="10" fill="#b083ff"/>
+            <path class="atuendo" d="M80 205 L160 205 L176 296 L64 296 Z" fill="#6ffbe0"/>
+          </g>
+
+          <!-- ===== atuendo: MONO ===== -->
+          <g id="atuendo-mono" class="grupo-atuendo" style="display:none">
+            <path class="atuendo" d="M88 150 L152 150 L160 296 L128 296 L120 230 L112 296 L80 296 Z" fill="#ffd166"/>
+          </g>
+
+          <!-- ===== atuendo: CHAQUETA FUTURISTA ===== -->
+          <g id="atuendo-chaqueta" class="grupo-atuendo" style="display:none">
+            <path class="atuendo" d="M82 150 L120 165 L158 150 L166 200 L152 296 L120 296 L88 296 L74 200 Z" fill="#6ffbe0"/>
+            <rect x="112" y="160" width="16" height="90" fill="#0a0616" opacity="0.35"/>
+            <path d="M82 150 L120 165 L94 178 Z" fill="#000" opacity="0.15"/>
+            <path d="M158 150 L120 165 L146 178 Z" fill="#000" opacity="0.15"/>
+          </g>
+
+          <!-- ===== atuendo: KIMONO DIGITAL ===== -->
+          <g id="atuendo-kimono" class="grupo-atuendo" style="display:none">
+            <path class="atuendo" d="M80 150 L118 165 L118 296 L60 296 L66 190 Z" fill="#ff3fa0"/>
+            <path class="atuendo" d="M160 150 L122 165 L122 296 L180 296 L174 190 Z" fill="#ff3fa0"/>
+            <rect x="105" y="210" width="30" height="16" fill="#0a0616" opacity="0.4"/>
+          </g>
+
+          <!-- ===== atuendo: BODY BRILLANTE ===== -->
+          <g id="atuendo-body" class="grupo-atuendo" style="display:none">
+            <path class="atuendo" d="M90 150 L150 150 L158 296 L82 296 Z" fill="#b083ff"/>
+            <path d="M90 150 L158 296 L148 296 L84 165 Z" fill="#fff" opacity="0.25"/>
+          </g>
+
+          <!-- brazos -->
+          <path class="piel" d="M84 155 C66 166 57 192 64 218 L80 212 C76 192 82 173 93 160 Z" fill="#f2c9a0"/>
+          <path class="piel" d="M156 155 C174 166 183 192 176 218 L160 212 C164 192 158 173 147 160 Z" fill="#f2c9a0"/>
+
+          <!-- cuello -->
+          <rect class="piel" x="110" y="100" width="20" height="24" fill="#f2c9a0"/>
+
+          <!-- ===== cabeza estilo anime ===== -->
+          <ellipse class="piel" cx="120" cy="74" rx="42" ry="44" fill="#f2c9a0"/>
+
+          <!-- mejillas -->
+          <ellipse cx="97" cy="86" rx="7" ry="4.5" fill="#ff8fbf" opacity="0.55"/>
+          <ellipse cx="143" cy="86" rx="7" ry="4.5" fill="#ff8fbf" opacity="0.55"/>
+
+          <!-- ojos grandes tipo anime -->
+          <g>
+            <ellipse cx="103" cy="76" rx="9" ry="12" fill="#2a1a33"/>
+            <ellipse cx="106" cy="70" rx="3" ry="4" fill="#fff"/>
+            <ellipse cx="137" cy="76" rx="9" ry="12" fill="#2a1a33"/>
+            <ellipse cx="140" cy="70" rx="3" ry="4" fill="#fff"/>
+          </g>
+          <path d="M92 60 Q103 54 114 60" stroke="#3a2440" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+          <path d="M126 60 Q137 54 148 60" stroke="#3a2440" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+          <path d="M113 92 Q120 97 127 92" stroke="#c4557f" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+
+          <!-- ===== cabello: CORTO (anime) ===== -->
+          <g id="cabello-corto" class="grupo-cabello">
+            <path class="cabello" d="M76 70 C68 30 92 8 120 8 C148 8 172 30 164 70 C168 54 160 40 156 48 C158 34 142 24 136 34 C132 22 108 22 104 34 C98 24 82 34 84 48 C80 40 72 54 76 70 Z" fill="#7a2c53"/>
+            <path class="cabello" d="M74 66 L64 92 L80 80 Z" fill="#7a2c53"/>
+            <path class="cabello" d="M166 66 L176 92 L160 80 Z" fill="#7a2c53"/>
+          </g>
+
+          <!-- ===== cabello: LARGO (anime) ===== -->
+          <g id="cabello-largo" class="grupo-cabello" style="display:none">
+            <path class="cabello" d="M76 70 C68 30 92 8 120 8 C148 8 172 30 164 70 C168 54 160 40 156 48 C158 34 142 24 136 34 C132 22 108 22 104 34 C98 24 82 34 84 48 C80 40 72 54 76 70 Z" fill="#7a2c53"/>
+            <path class="cabello" d="M70 68 C62 110 60 160 70 195 L88 190 C80 158 82 112 90 74 Z" fill="#7a2c53"/>
+            <path class="cabello" d="M170 68 C178 110 180 160 170 195 L152 190 C160 158 158 112 150 74 Z" fill="#7a2c53"/>
+          </g>
+
+          <!-- ===== cabello: CON MOÑO (anime) ===== -->
+          <g id="cabello-mono" class="grupo-cabello" style="display:none">
+            <path class="cabello" d="M76 70 C68 30 92 8 120 8 C148 8 172 30 164 70 C168 54 160 40 156 48 C158 34 142 24 136 34 C132 22 108 22 104 34 C98 24 82 34 84 48 C80 40 72 54 76 70 Z" fill="#7a2c53"/>
+            <circle class="cabello" cx="120" cy="10" r="17" fill="#7a2c53"/>
+            <path class="cabello" d="M120 -4 L127 12 L113 12 Z" fill="#7a2c53"/>
+          </g>
+
+          <!-- ===== accesorio: gafas ===== -->
+          <g id="acc-gafas" style="display:none">
+            <circle cx="103" cy="76" r="12" fill="none" stroke="#1d1234" stroke-width="2.6"/>
+            <circle cx="137" cy="76" r="12" fill="none" stroke="#1d1234" stroke-width="2.6"/>
+            <line x1="115" y1="76" x2="125" y2="76" stroke="#1d1234" stroke-width="2.6"/>
+          </g>
+
+          <!-- ===== accesorio: aretes ===== -->
+          <g id="acc-aretes" style="display:none">
+            <circle cx="78" cy="98" r="3.4" fill="#6ffbe0"/>
+            <circle cx="162" cy="98" r="3.4" fill="#6ffbe0"/>
+          </g>
+
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ===================== CONTROLES ===================== -->
+  <div class="avatar-controles">
+
+    <div class="control-grupo">
+      <h3>Talla del avatar</h3>
+      <label>Estatura
+        <input type="range" id="rangoEstatura" min="85" max="115" value="100">
+      </label>
+      <label>Contextura
+        <input type="range" id="rangoContextura" min="85" max="115" value="100">
+      </label>
+    </div>
+
+    <div class="control-grupo">
+      <h3>Tono de piel</h3>
+      <div class="swatches" data-target="piel">
+        <button class="swatch activo" style="background:#f2c9a0" data-color="#f2c9a0" aria-label="Piel clara"></button>
+        <button class="swatch" style="background:#d69b6b" data-color="#d69b6b" aria-label="Piel media"></button>
+        <button class="swatch" style="background:#a9683f" data-color="#a9683f" aria-label="Piel morena"></button>
+        <button class="swatch" style="background:#5c3a24" data-color="#5c3a24" aria-label="Piel oscura"></button>
+      </div>
+    </div>
+
+    <div class="control-grupo">
+      <h3>Color de cabello</h3>
+      <div class="swatches" data-target="cabello">
+        <button class="swatch activo" style="background:#7a2c53" data-color="#7a2c53" aria-label="Vino tinto"></button>
+        <button class="swatch" style="background:#241a2e" data-color="#241a2e" aria-label="Negro"></button>
+        <button class="swatch" style="background:#ffcf6b" data-color="#ffcf6b" aria-label="Rubio"></button>
+        <button class="swatch" style="background:#b083ff" data-color="#b083ff" aria-label="Lila"></button>
+        <button class="swatch" style="background:#6ffbe0" data-color="#6ffbe0" aria-label="Aqua"></button>
+      </div>
+    </div>
+
+    <div class="control-grupo">
+      <h3>Estilo de cabello</h3>
+      <div class="opciones" data-tipo="cabello">
+        <button class="opcion activo" data-valor="corto">Corto</button>
+        <button class="opcion" data-valor="largo">Largo</button>
+        <button class="opcion" data-valor="mono">Con moño</button>
+      </div>
+    </div>
+
+    <div class="control-grupo">
+      <h3>Atuendo</h3>
+      <div class="opciones" data-tipo="atuendo">
+        <button class="opcion activo" data-valor="vestido">Vestido</button>
+        <button class="opcion" data-valor="conjunto">Conjunto</button>
+        <button class="opcion" data-valor="mono-ropa">Mono</button>
+        <button class="opcion" data-valor="chaqueta">Chaqueta</button>
+        <button class="opcion" data-valor="kimono">Kimono</button>
+        <button class="opcion" data-valor="body">Body</button>
+      </div>
+    </div>
+
+    <div class="control-grupo">
+      <h3>Color del atuendo</h3>
+      <div class="swatches" data-target="atuendo">
+        <button class="swatch activo" style="background:#ff3fa0" data-color="#ff3fa0" aria-label="Magenta"></button>
+        <button class="swatch" style="background:#b083ff" data-color="#b083ff" aria-label="Lila"></button>
+        <button class="swatch" style="background:#6ffbe0" data-color="#6ffbe0" aria-label="Aqua"></button>
+        <button class="swatch" style="background:#ffd166" data-color="#ffd166" aria-label="Dorado"></button>
+        <button class="swatch" style="background:#f8eefc" data-color="#f8eefc" aria-label="Blanco"></button>
+      </div>
+    </div>
+
+    <div class="control-grupo">
+      <h3>Patrón</h3>
+      <div class="opciones" data-tipo="patron">
+        <button class="opcion activo" data-valor="ninguno">Ninguno</button>
+        <button class="opcion" data-valor="rayas">Rayas</button>
+        <button class="opcion" data-valor="lunares">Lunares</button>
+        <button class="opcion" data-valor="corazones">Corazones</button>
+        <button class="opcion" data-valor="estrellas">Estrellas</button>
+      </div>
+    </div>
+
+    <div class="control-grupo">
+      <h3>Accesorios</h3>
+      <div class="opciones">
+        <button class="opcion" data-toggle="acc-gafas">Gafas</button>
+        <button class="opcion" data-toggle="acc-aretes">Aretes</button>
+      </div>
+    </div>
+
+    <a class="boton" href="./ropa.html" style="margin-top:6px;">Diseñar mi propia ropa</a>
+    <button class="boton" id="btnGuardar">Guardar mi look</button>
+  </div>
+</div>
+
+<p class="avatar-nota">
+  Esta es una vista previa del probador de avatares de Pink Mentaly. Tu look se guarda solo mientras navegas esta página; muy pronto podrás crear tu cuenta y conservarlo en cada visita.
+</p>
+
+<footer class="pie">
+  Pink Mentaly · <span>Vive la moda</span> desde otra dimensión
+</footer>
+
+<div class="toast" id="toast">Tu avatar quedó listo para la boutique ✨</div>
+
+<script>
+  var estado = { atuendoColor: '#ff3fa0', atuendoPatron: 'ninguno' };
+
+  function aplicarAtuendo() {
+    var elementos = document.querySelectorAll('.atuendo');
+    if (estado.atuendoPatron === 'ninguno') {
+      elementos.forEach(function (el) {
+        el.setAttribute('fill', estado.atuendoColor);
+        el.style.color = '';
+      });
+    } else {
+      elementos.forEach(function (el) {
+        el.setAttribute('fill', 'url(#patron-' + estado.atuendoPatron + ')');
+        el.style.color = estado.atuendoColor;
+      });
+    }
+  }
+
+  // colores (piel / cabello / atuendo)
+  document.querySelectorAll('.swatches').forEach(function (grupo) {
+    var objetivo = grupo.dataset.target;
+    grupo.querySelectorAll('.swatch').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        grupo.querySelectorAll('.swatch').forEach(function (b) { b.classList.remove('activo'); });
+        btn.classList.add('activo');
+        var color = btn.dataset.color;
+        if (objetivo === 'atuendo') {
+          estado.atuendoColor = color;
+          aplicarAtuendo();
+        } else {
+          document.querySelectorAll('.' + objetivo).forEach(function (el) { el.setAttribute('fill', color); });
+        }
+      });
+    });
+  });
+
+  // estilos (cabello / atuendo)
+  var mapaCabello = { corto: 'cabello-corto', largo: 'cabello-largo', mono: 'cabello-mono' };
+  var mapaAtuendo = { vestido: 'atuendo-vestido', conjunto: 'atuendo-conjunto', 'mono-ropa': 'atuendo-mono', chaqueta: 'atuendo-chaqueta', kimono: 'atuendo-kimono', body: 'atuendo-body' };
+
+  document.querySelectorAll('.opciones[data-tipo="cabello"], .opciones[data-tipo="atuendo"]').forEach(function (grupo) {
+    var tipo = grupo.dataset.tipo;
+    var mapa = tipo === 'cabello' ? mapaCabello : mapaAtuendo;
+    var clasePadre = tipo === 'cabello' ? 'grupo-cabello' : 'grupo-atuendo';
+
+    grupo.querySelectorAll('.opcion').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        grupo.querySelectorAll('.opcion').forEach(function (b) { b.classList.remove('activo'); });
+        btn.classList.add('activo');
+        document.querySelectorAll('.' + clasePadre).forEach(function (g) { g.style.display = 'none'; });
+        document.getElementById(mapa[btn.dataset.valor]).style.display = '';
+        if (tipo === 'atuendo') { aplicarAtuendo(); }
+      });
+    });
+  });
+
+  // patrón
+  document.querySelectorAll('.opciones[data-tipo="patron"] .opcion').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      btn.parentElement.querySelectorAll('.opcion').forEach(function (b) { b.classList.remove('activo'); });
+      btn.classList.add('activo');
+      estado.atuendoPatron = btn.dataset.valor;
+      aplicarAtuendo();
+    });
+  });
+
+  // accesorios
+  document.querySelectorAll('[data-toggle]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var el = document.getElementById(btn.dataset.toggle);
+      var visible = el.style.display !== 'none';
+      el.style.display = visible ? 'none' : '';
+      btn.classList.toggle('activo', !visible);
+    });
+  });
+
+  // talla
+  var figura = document.getElementById('figura');
+  function actualizarTalla() {
+    var sy = document.getElementById('rangoEstatura').value / 100;
+    var sx = document.getElementById('rangoContextura').value / 100;
+    figura.style.transformOrigin = '120px 300px';
+    figura.style.transform = 'scale(' + sx + ',' + sy + ')';
+  }
+  document.getElementById('rangoEstatura').addEventListener('input', actualizarTalla);
+  document.getElementById('rangoContextura').addEventListener('input', actualizarTalla);
+
+  // guardar look
+  document.getElementById('btnGuardar').addEventListener('click', function () {
+    var toast = document.getElementById('toast');
+    toast.classList.add('visible');
+    setTimeout(function () { toast.classList.remove('visible'); }, 2400);
+  });
+
+  // leer selección que venga desde "Diseña tu ropa"
+  (function aplicarParametrosDeURL() {
+    var params = new URLSearchParams(window.location.search);
+    var atuendo = params.get('atuendo');
+    var color = params.get('color');
+    var patron = params.get('patron');
+
+    if (atuendo && mapaAtuendo[atuendo]) {
+      document.querySelectorAll('.grupo-atuendo').forEach(function (g) { g.style.display = 'none'; });
+      document.getElementById(mapaAtuendo[atuendo]).style.display = '';
+      document.querySelectorAll('.opciones[data-tipo="atuendo"] .opcion').forEach(function (b) {
+        b.classList.toggle('activo', b.dataset.valor === atuendo);
+      });
+    }
+    if (color) {
+      estado.atuendoColor = color;
+      document.querySelectorAll('.swatches[data-target="atuendo"] .swatch').forEach(function (b) {
+        b.classList.toggle('activo', b.dataset.color.toLowerCase() === color.toLowerCase());
+      });
+    }
+    if (patron) {
+      estado.atuendoPatron = patron;
+      document.querySelectorAll('.opciones[data-tipo="patron"] .opcion').forEach(function (b) {
+        b.classList.toggle('activo', b.dataset.valor === patron);
+      });
+    }
+    if (atuendo || color || patron) { aplicarAtuendo(); }
+  })();
+</script>
+
+  </main>
+</div>
+</body>
+</html>
