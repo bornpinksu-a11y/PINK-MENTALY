@@ -12,18 +12,17 @@
 <body>
 <div class="campo-estrellas"></div>
 
+<div class="anuncio-top">✦ Envíos digitales inmediatos · Prueba cada prenda en tu avatar antes de comprar ✦</div>
+<script src="../JS/carrito.js"></script>
 <div class="layout">
   <aside class="sidebar">
     <a class="marca" href="./index.html">Pink<span>Mentaly</span></a>
     <a class="sidebar-destacado" href="./avatar.html">✦ Mi Avatar</a>
+    <a class="carrito-link" href="./carrito.html">
+      🛒 Carrito
+      <span class="carrito-badge" style="display:none;">0</span>
+    </a>
     <nav class="sidebar-nav">
-      <span class="sidebar-grupo">Vestuario</span>
-      <a class="sidebar-link" href="./camisas.html">Camisas</a>
-      <a class="sidebar-link" href="./faldas.html">Faldas</a>
-      <a class="sidebar-link" href="./vestidos-tienda.html" aria-current="page">Vestidos</a>
-      <a class="sidebar-link" href="./zapatos.html">Zapatos</a>
-      <a class="sidebar-link" href="./aretes.html">Aretes</a>
-      <a class="sidebar-link" href="./accesorios.html">Accesorios</a>
       <span class="sidebar-grupo">Diseña</span>
       <a class="sidebar-link" href="./ropa.html">Crea tu prenda</a>
       <span class="sidebar-grupo">Conócenos</span>
@@ -38,6 +37,14 @@
     <p class="sidebar-pie">Pink Mentaly<br>Vive la moda desde otra dimensión</p>
   </aside>
   <main class="main-contenido">
+<nav class="subnav-ropa">
+  <a href="./camisas.html">Camisas</a>
+  <a href="./faldas.html">Faldas</a>
+  <a href="./vestidos-tienda.html" aria-current="page">Vestidos</a>
+  <a href="./zapatos.html">Zapatos</a>
+  <a href="./aretes.html">Aretes</a>
+  <a href="./accesorios.html">Accesorios</a>
+</nav>
 
 
 <span class="antetitulo" style="margin-top:40px; display:block;">Vestuario</span>
@@ -45,32 +52,102 @@
 <div class="linea-central"></div>
 <p class="seccion-sub" style="margin-top:-30px;">Descubre los vestidos de la colección y ve cómo lucen.</p>
 
+<div class="buscador-productos">
+  <input type="text" id="buscadorProductos" placeholder="Buscar por nombre o color...">
+</div>
+
 <section class="vitrina" id="vitrina">
   <div class="producto-card activo" data-color="#ff3fa0" data-patron="ninguno">
     <div class="producto-swatch" style="background:#ff3fa0"></div>
     <p class="producto-nombre">Vestido Magenta Portal</p>
+    <p class="producto-precio">$139.000</p>
+    <button class="producto-agregar" type="button" data-id="vestidos-tienda-vestido-magenta-portal" data-nombre="Vestido Magenta Portal" data-precio="139000" data-color="#ff3fa0">Agregar al carrito</button>
   </div>
   <div class="producto-card" data-color="#b083ff" data-patron="lunares">
     <div class="producto-swatch" style="background:#b083ff"></div>
     <p class="producto-nombre">Vestido Lila a Lunares</p>
+    <p class="producto-precio">$149.000</p>
+    <button class="producto-agregar" type="button" data-id="vestidos-tienda-vestido-lila-a-lunares" data-nombre="Vestido Lila a Lunares" data-precio="149000" data-color="#b083ff">Agregar al carrito</button>
   </div>
   <div class="producto-card" data-color="#6ffbe0" data-patron="ninguno">
     <div class="producto-swatch" style="background:#6ffbe0"></div>
     <p class="producto-nombre">Vestido Aqua Digital</p>
+    <p class="producto-precio">$129.000</p>
+    <button class="producto-agregar" type="button" data-id="vestidos-tienda-vestido-aqua-digital" data-nombre="Vestido Aqua Digital" data-precio="129000" data-color="#6ffbe0">Agregar al carrito</button>
   </div>
   <div class="producto-card" data-color="#f8eefc" data-patron="corazones">
     <div class="producto-swatch" style="background:#f8eefc"></div>
     <p class="producto-nombre">Vestido Blanco con Corazones</p>
+    <p class="producto-precio">$159.000</p>
+    <button class="producto-agregar" type="button" data-id="vestidos-tienda-vestido-blanco-con-corazones" data-nombre="Vestido Blanco con Corazones" data-precio="159000" data-color="#f8eefc">Agregar al carrito</button>
   </div>
   <div class="producto-card" data-color="#241a2e" data-patron="ninguno">
     <div class="producto-swatch" style="background:#241a2e"></div>
     <p class="producto-nombre">Vestido Negro Eclipse</p>
+    <p class="producto-precio">$119.000</p>
+    <button class="producto-agregar" type="button" data-id="vestidos-tienda-vestido-negro-eclipse" data-nombre="Vestido Negro Eclipse" data-precio="119000" data-color="#241a2e">Agregar al carrito</button>
+  </div>
+
+  <div class="producto-card" data-color="#ffd166" data-patron="ninguno">
+    <div class="producto-swatch" style="background:#ffd166"></div>
+    <p class="producto-nombre">Vestido Dorado Brillante</p>
+    <p class="producto-precio">$169.000</p>
+    <button class="producto-agregar" type="button" data-id="vestidos-tienda-vestido-dorado-brillante" data-nombre="Vestido Dorado Brillante" data-precio="169000" data-color="#ffd166">Agregar al carrito</button>
+  </div>
+  <div class="producto-card" data-color="#ff3fa0" data-patron="rayas">
+    <div class="producto-swatch" style="background:#ff3fa0"></div>
+    <p class="producto-nombre">Vestido Magenta a Rayas</p>
+    <p class="producto-precio">$135.000</p>
+    <button class="producto-agregar" type="button" data-id="vestidos-tienda-vestido-magenta-a-rayas" data-nombre="Vestido Magenta a Rayas" data-precio="135000" data-color="#ff3fa0">Agregar al carrito</button>
+  </div>
+  <div class="producto-card" data-color="#6ffbe0" data-patron="lunares">
+    <div class="producto-swatch" style="background:#6ffbe0"></div>
+    <p class="producto-nombre">Vestido Aqua a Lunares</p>
+    <p class="producto-precio">$125.000</p>
+    <button class="producto-agregar" type="button" data-id="vestidos-tienda-vestido-aqua-a-lunares" data-nombre="Vestido Aqua a Lunares" data-precio="125000" data-color="#6ffbe0">Agregar al carrito</button>
   </div>
 </section>
 <p class="seccion-sub" style="margin-top:-70px;"><a href="./ropa.html" style="color:var(--magenta);">¿No encuentras tu estilo? Diséñalo tú misma →</a></p>
-<footer class="pie">
-  Pink Mentaly · <span>Vive la moda</span> desde otra dimensión
+<footer class="pie-pro">
+  <div class="pie-pro-grid">
+    <div class="pie-pro-col">
+      <h4>Pink Mentaly</h4>
+      <p>Boutique 100% virtual. Vive la moda desde otra dimensión, con avatares interactivos y un clóset que diseñas tú misma.</p>
+      <div class="redes">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 3.2.15 4.7 1.66 4.85 4.85.06 1.28.07 1.66.07 4.9s0 3.6-.07 4.9c-.15 3.18-1.64 4.7-4.85 4.85-1.28.06-1.65.07-4.9.07s-3.6 0-4.9-.07c-3.22-.15-4.7-1.68-4.85-4.85-.06-1.28-.07-1.65-.07-4.9s0-3.6.07-4.9C2.4 3.93 3.9 2.41 7.1 2.27 8.4 2.2 8.77 2.2 12 2.2Zm0 3.15A6.65 6.65 0 1 0 12 18.7a6.65 6.65 0 0 0 0-13.3Zm0 2.16a4.49 4.49 0 1 1 0 8.98 4.49 4.49 0 0 1 0-8.98Zm6.9-2.4a1.56 1.56 0 1 1-3.12 0 1.56 1.56 0 0 1 3.12 0Z"/></svg></a>
+        <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M14.7 2h2.9c.2 1.35.85 2.55 1.85 3.4 1 .85 2.25 1.3 3.55 1.35v2.95c-1.5-.04-2.9-.44-4.15-1.17v6.9c0 3.4-2.75 6.15-6.15 6.15S6.6 18.83 6.6 15.43c0-3.15 2.35-5.75 5.4-6.1v3c-1.35.32-2.35 1.53-2.35 2.95a3.05 3.05 0 0 0 6.1 0V2Z"/></svg></a>
+        <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.06-1.33A10 10 0 1 0 12 2Zm0 1.9a8.1 8.1 0 0 1 6.9 12.3l-.28.46.7 2.55-2.6-.68-.44.26A8.1 8.1 0 1 1 12 3.9Zm-2.9 4.2c-.2 0-.5.06-.76.36-.26.3-1 .96-1 2.35 0 1.4 1.02 2.75 1.16 2.94.15.2 2 3.12 4.9 4.25 2.4.93 2.9.75 3.42.7.52-.05 1.66-.68 1.9-1.34.23-.65.23-1.2.16-1.34-.07-.13-.26-.2-.55-.36-.28-.16-1.66-.82-1.92-.9-.26-.1-.44-.14-.63.14-.2.28-.72.9-.88 1.08-.16.2-.32.22-.6.07-.28-.14-1.16-.43-2.2-1.37-.82-.72-1.36-1.62-1.53-1.9-.16-.27-.02-.42.12-.56.13-.13.28-.32.42-.48.14-.16.19-.28.28-.46.1-.2.05-.36-.02-.5-.07-.15-.63-1.55-.88-2.1-.22-.5-.46-.44-.63-.44Z"/></svg></a>
+      </div>
+    </div>
+    <div class="pie-pro-col">
+      <h4>Vestuario</h4>
+      <a href="./camisas.html">Camisas</a>
+      <a href="./faldas.html">Faldas</a>
+      <a href="./vestidos-tienda.html">Vestidos</a>
+      <a href="./zapatos.html">Zapatos</a>
+    </div>
+    <div class="pie-pro-col">
+      <h4>Pink Mentaly</h4>
+      <a href="./historia.html">Historia</a>
+      <a href="./mision.html">Misión y Visión</a>
+      <a href="./creadores.html">Creadoras</a>
+      <a href="./contacto.html">Contacto</a>
+    </div>
+    <div class="pie-pro-col">
+      <h4>Entérate primero</h4>
+      <p>Novedades, lanzamientos y looks nuevos directo a tu correo.</p>
+      <form class="pie-pro-newsletter" onsubmit="return false;">
+        <input type="email" placeholder="tucorreo@ejemplo.com" aria-label="Correo electrónico">
+        <button type="submit">Unirme</button>
+      </form>
+    </div>
+  </div>
+  <div class="pie-pro-bottom">
+    <span>© <span id="anioActual">2026</span> Pink Mentaly · Vive la moda desde otra dimensión</span>
+    <span>Hecho con 💜 como boutique 100% virtual</span>
+  </div>
 </footer>
+<script>document.getElementById('anioActual') && (document.getElementById('anioActual').textContent = new Date().getFullYear());</script>
 
 <div class="previa-flotante">
   <svg id="previaSVG" viewBox="0 0 140 200" xmlns="http://www.w3.org/2000/svg">
@@ -130,9 +207,33 @@
   });
 
   aplicarSeleccion('#ff3fa0', 'ninguno');
+  // agregar al carrito
+  document.querySelectorAll('.producto-agregar').forEach(function (boton) {
+    boton.addEventListener('click', function () {
+      pmAgregarAlCarrito({
+        id: boton.dataset.id,
+        nombre: boton.dataset.nombre,
+        precio: parseInt(boton.dataset.precio, 10),
+        color: boton.dataset.color
+      });
+    });
+  });
+
+  // buscador
+  var buscador = document.getElementById('buscadorProductos');
+  if (buscador) {
+    buscador.addEventListener('input', function () {
+      var texto = buscador.value.trim().toLowerCase();
+      document.querySelectorAll('.producto-card').forEach(function (tarjeta) {
+        var nombre = tarjeta.querySelector('.producto-nombre').textContent.toLowerCase();
+        tarjeta.style.display = nombre.indexOf(texto) !== -1 ? '' : 'none';
+      });
+    });
+  }
 </script>
 
   </main>
 </div>
+<div class="toast" id="toastGlobal"></div>
 </body>
 </html>
