@@ -1261,6 +1261,323 @@ a:focus-visible, button:focus-visible {
 }
 
 /* ============================================================
+   SUBNAV DE ROPA — barra superior de categorías
+   ============================================================ */
+.subnav-ropa {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 22px 24px 0;
+}
+.subnav-ropa a {
+  text-decoration: none;
+  color: var(--ink-dim);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+.subnav-ropa a:hover { color: var(--ink); border-color: var(--lilac); }
+.subnav-ropa a[aria-current="page"] {
+  color: var(--ink);
+  border-color: var(--magenta);
+  background: rgba(255,63,160,0.12);
+}
+
+/* ============================================================
+   DESPLEGABLES — select de talla
+   ============================================================ */
+.control-grupo select {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  cursor: pointer;
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--ink-dim) 50%), linear-gradient(135deg, var(--ink-dim) 50%, transparent 50%);
+  background-position: calc(100% - 20px) center, calc(100% - 15px) center;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
+.control-grupo select:focus { outline: none; border-color: var(--magenta); }
+.control-grupo label { display: block; font-size: 0.8rem; color: var(--ink-faint); margin-bottom: 14px; }
+.control-grupo label select { margin-top: 8px; }
+
+/* ============================================================
+   ANUNCIO SUPERIOR
+   ============================================================ */
+.anuncio-top {
+  text-align: center;
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-dim);
+  padding: 9px 20px;
+  background: linear-gradient(90deg, rgba(255,63,160,0.18), rgba(176,131,255,0.18));
+  border-bottom: 1px solid var(--line);
+}
+
+/* ============================================================
+   CARRITO — ícono y badge
+   ============================================================ */
+.carrito-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: var(--ink-dim);
+  font-size: 0.85rem;
+  padding: 9px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.carrito-link:hover { color: var(--ink); border-color: var(--lilac); }
+.carrito-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--magenta);
+  color: var(--void);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+/* ============================================================
+   BUSCADOR dentro de una vitrina
+   ============================================================ */
+.buscador-productos {
+  max-width: 420px;
+  margin: 0 auto 30px;
+  padding: 0 24px;
+}
+.buscador-productos input {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 11px 20px;
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+}
+.buscador-productos input:focus { outline: none; border-color: var(--magenta); }
+.buscador-productos input::placeholder { color: var(--ink-faint); }
+
+/* ============================================================
+   PRECIO Y BOTÓN "AGREGAR" en tarjetas de producto
+   ============================================================ */
+.producto-precio {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  color: var(--aqua);
+  font-size: 0.85rem;
+  margin: -4px 0 0;
+}
+.producto-agregar {
+  width: 100%;
+  margin-top: 2px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+  color: var(--ink-dim);
+  font-family: var(--font-ui);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+.producto-agregar:hover {
+  border-color: var(--magenta);
+  color: var(--ink);
+  background: rgba(255,63,160,0.1);
+}
+
+/* ============================================================
+   CARRITO — página completa
+   ============================================================ */
+.carrito-lista {
+  max-width: 760px;
+  margin: 0 auto 40px;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.carrito-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgba(255,255,255,0.035);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+.carrito-item .swatch-item {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+.carrito-item-info { flex: 1 1 auto; min-width: 0; }
+.carrito-item-info h4 { margin: 0 0 4px; font-size: 0.95rem; color: var(--ink); font-weight: 500; }
+.carrito-item-info p { margin: 0; font-size: 0.82rem; color: var(--ink-faint); }
+.carrito-cantidad {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.carrito-cantidad button {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.carrito-cantidad button:hover { border-color: var(--magenta); }
+.carrito-quitar {
+  background: none;
+  border: none;
+  color: var(--ink-faint);
+  cursor: pointer;
+  font-size: 0.78rem;
+  text-decoration: underline;
+}
+.carrito-quitar:hover { color: var(--magenta); }
+
+.carrito-resumen {
+  max-width: 760px;
+  margin: 0 auto 90px;
+  padding: 26px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+.carrito-resumen .total {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.6rem;
+  color: var(--ink);
+}
+.carrito-vacio {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto 100px;
+  padding: 50px 24px;
+  color: var(--ink-faint);
+}
+
+.confirmacion-pedido {
+  max-width: 560px;
+  margin: 0 auto 100px;
+  padding: 40px 24px;
+  text-align: center;
+}
+.confirmacion-pedido .check {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: linear-gradient(100deg, var(--magenta), var(--lilac));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+/* ============================================================
+   FOOTER PRO
+   ============================================================ */
+.pie-pro {
+  border-top: 1px solid var(--line);
+  padding: 50px 24px 30px;
+  margin-top: 40px;
+}
+.pie-pro-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  max-width: 1040px;
+  margin: 0 auto 30px;
+}
+.pie-pro-col { flex: 1 1 200px; }
+.pie-pro-col h4 {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--lilac);
+  margin: 0 0 14px;
+}
+.pie-pro-col a {
+  display: block;
+  text-decoration: none;
+  color: var(--ink-dim);
+  font-size: 0.86rem;
+  margin-bottom: 10px;
+}
+.pie-pro-col a:hover { color: var(--ink); }
+.pie-pro-col p { color: var(--ink-faint); font-size: 0.86rem; line-height: 1.7; margin: 0 0 10px; }
+.pie-pro-newsletter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pie-pro-newsletter input {
+  flex: 1 1 auto;
+  min-width: 140px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 9px 16px;
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+}
+.pie-pro-newsletter button {
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(100deg, var(--magenta), var(--lilac));
+  color: var(--void);
+  font-weight: 600;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+.pie-pro-bottom {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+}
+
+/* ============================================================
    PIE DE PÁGINA
    ============================================================ */
 .pie {
