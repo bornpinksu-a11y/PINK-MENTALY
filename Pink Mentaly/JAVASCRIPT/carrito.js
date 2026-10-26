@@ -1,87 +1,54 @@
 /* ============================================================
-   PINK MENTALY — Carrito de compras (demo front-end)
-   Se guarda en localStorage del navegador: funciona de verdad
-   una vez el sitio esté publicado en un hosting real.
+   PINK MENTALY — Carrito, favoritos y avisos (demo front-end)
+   Datos guardados en el navegador (localStorage).
    ============================================================ */
+var PM_CARRITO_KEY = 'pinkMentalyCarrito';
+var PM_FAVS_KEY = 'pmFavoritos';
 
-var CARRITO_KEY = 'pinkMentalyCarrito';
+function pmLeer(key, def) { try { var d = localStorage.getItem(key); return d ? JSON.parse(d) : def; } catch (e) { return def; } }
+function pmEscribir(key, val) { try { localStorage.setItem(key, JSON.stringify(val)); } catch (e) {} }
 
-function pmLeerCarrito() {
-  try {
-    var datos = localStorage.getItem(CARRITO_KEY);
-    return datos ? JSON.parse(datos) : [];
-  } catch (e) {
-    return [];
-  }
+function pmLeerCarrito() { return pmLeer(PM_CARRITO_KEY, []); }
+function pmGuardarCarrito(c) { pmEscribir(PM_CARRITO_KEY, c); pmActualizarBadge(); }
+function pmAgregarAlCarrito(prod) {
+  var c = pmLeerCarrito();
+  var ex = c.filter(function (p) { return p.id === prod.id; })[0];
+  if (ex) ex.cantidad += 1; else { prod.cantidad = 1; c.push(prod); }
+  pmGuardarCarrito(c);
+  pmToast('«' + prod.nombre + '» se agregó al carrito 🛍️');
 }
-
-function pmGuardarCarrito(carrito) {
-  try {
-    localStorage.setItem(CARRITO_KEY, JSON.stringify(carrito));
-  } catch (e) { /* almacenamiento no disponible */ }
-  pmActualizarBadge();
-}
-
-function pmAgregarAlCarrito(producto) {
-  var carrito = pmLeerCarrito();
-  var existente = carrito.find(function (p) { return p.id === producto.id; });
-  if (existente) {
-    existente.cantidad += 1;
-  } else {
-    producto.cantidad = 1;
-    carrito.push(producto);
-  }
-  pmGuardarCarrito(carrito);
-  pmMostrarToast('"' + producto.nombre + '" se agregó al carrito ✨');
-}
-
-function pmQuitarDelCarrito(id) {
-  var carrito = pmLeerCarrito().filter(function (p) { return p.id !== id; });
-  pmGuardarCarrito(carrito);
-}
-
+function pmQuitarDelCarrito(id) { pmGuardarCarrito(pmLeerCarrito().filter(function (p) { return p.id !== id; })); }
 function pmCambiarCantidad(id, delta) {
-  var carrito = pmLeerCarrito();
-  var item = carrito.find(function (p) { return p.id === id; });
-  if (!item) return;
-  item.cantidad += delta;
-  if (item.cantidad < 1) {
-    carrito = carrito.filter(function (p) { return p.id !== id; });
-  }
-  pmGuardarCarrito(carrito);
+  var c = pmLeerCarrito(), it = c.filter(function (p) { return p.id === id; })[0];
+  if (!it) return; it.cantidad += delta;
+  if (it.cantidad < 1) c = c.filter(function (p) { return p.id !== id; });
+  pmGuardarCarrito(c);
 }
-
-function pmVaciarCarrito() {
-  pmGuardarCarrito([]);
-}
-
-function pmTotalItems() {
-  return pmLeerCarrito().reduce(function (acc, p) { return acc + p.cantidad; }, 0);
-}
-
-function pmTotalPrecio() {
-  return pmLeerCarrito().reduce(function (acc, p) { return acc + p.cantidad * p.precio; }, 0);
-}
-
-function pmFormatoPrecio(valor) {
-  return '$' + valor.toLocaleString('es-CO');
-}
+function pmVaciarCarrito() { pmGuardarCarrito([]); }
+function pmTotalItems() { return pmLeerCarrito().reduce(function (a, p) { return a + p.cantidad; }, 0); }
+function pmTotalPrecio() { return pmLeerCarrito().reduce(function (a, p) { return a + p.cantidad * p.precio; }, 0); }
+function pmPrecio(v) { return '$' + Math.round(v).toLocaleString('es-CO'); }
 
 function pmActualizarBadge() {
-  var total = pmTotalItems();
-  document.querySelectorAll('.carrito-badge').forEach(function (b) {
-    b.textContent = total;
-    b.style.display = total > 0 ? 'inline-flex' : 'none';
-  });
+  var t = pmTotalItems();
+  document.querySelectorAll('.carrito-badge').forEach(function (b) { b.textContent = t; b.style.display = t > 0 ? 'inline-flex' : 'none'; });
 }
 
-function pmMostrarToast(mensaje) {
-  var toast = document.getElementById('toastGlobal');
-  if (!toast) return;
-  toast.textContent = mensaje;
-  toast.classList.add('visible');
-  clearTimeout(window._pmToastTimer);
-  window._pmToastTimer = setTimeout(function () { toast.classList.remove('visible'); }, 2400);
+/* favoritos */
+function pmFavs() { return pmLeer(PM_FAVS_KEY, []); }
+function pmEsFav(id) { return pmFavs().indexOf(id) !== -1; }
+function pmToggleFav(id) {
+  var f = pmFavs(), i = f.indexOf(id);
+  if (i === -1) { f.push(id); pmToast('Guardado en favoritos 💗'); } else { f.splice(i, 1); pmToast('Quitado de favoritos'); }
+  pmEscribir(PM_FAVS_KEY, f);
+  return i === -1;
 }
 
+/* avisos */
+function pmToast(msg) {
+  var t = document.getElementById('toastGlobal');
+  if (!t) { t = document.createElement('div'); t.id = 'toastGlobal'; t.className = 'toast'; document.body.appendChild(t); }
+  t.textContent = msg; t.classList.add('visible');
+  clearTimeout(window._pmT); window._pmT = setTimeout(function () { t.classList.remove('visible'); }, 2500);
+}
 document.addEventListener('DOMContentLoaded', pmActualizarBadge);
